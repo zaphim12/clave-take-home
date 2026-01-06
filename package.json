@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.89.0",
+    "dotenv": "^17.2.3",
+    "fast-levenshtein": "^3.0.0",
+    "install": "^0.13.0",
+    "npm": "^11.7.0",
+    "recharts": "^3.6.0"
+  },
+  "scripts": {
+    "parse:doordash": "node -r dotenv/config parse_doordash_orders.js",
+    "parse:toast": "node -r dotenv/config parse_toast_orders.js",
+    "parse:square": "node -r dotenv/config parse_square_orders.js"
+  }
+}
