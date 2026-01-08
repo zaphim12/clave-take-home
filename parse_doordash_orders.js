@@ -152,7 +152,7 @@ async function insertOrder(order, items) {
       return;
     }
 
-    console.log(`✓ Inserted order ${order.order_id}`);
+    console.log(`Inserted order ${order.order_id}`);
 
     // Insert order items
     const formattedItems = await formatOrderItems(order.order_id, items);
@@ -225,7 +225,7 @@ async function main() {
     await insertOrder(formattedOrder, order.order_items);
   }
 
-  console.log(`\n✅ Successfully processed ${data.orders.length} orders`);
+  console.log(`\nSuccessfully processed ${data.orders.length} orders`);
 }
 
 // Run the main function

@@ -1,10 +1,15 @@
 {
   "dependencies": {
-    "@supabase/supabase-js": "^2.89.0",
+    "@supabase/supabase-js": "^2.90.0",
     "dotenv": "^17.2.3",
+    "drizzle-kit": "^0.31.8",
+    "drizzle-orm": "^0.45.1",
     "fast-levenshtein": "^3.0.0",
+    "groq-sdk": "^0.37.0",
     "install": "^0.13.0",
     "npm": "^11.7.0",
+    "openai": "^6.15.0",
+    "postgres": "^3.4.8",
     "recharts": "^3.6.0"
   },
   "scripts": {

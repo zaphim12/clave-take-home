@@ -115,9 +115,16 @@ function formatOrder(order) {
     ? order.fulfillments[0].type 
     : null;
 
+  // Extract store name from store_id: "LCN001DOWNTOWN" -> "downtown"
+  const storeMatch = order.location_id.match(/^LCN\d+(.+?)$/);
+  const storeName = storeMatch ? storeMatch[1].toLowerCase() : order.location_id;
+  if (storeName === 'univ') {
+    storeName = 'university';
+  }
+
   return {
     order_id: order.id,
-    store_id: order.location_id,
+    store_id: storeName,
     fulfillment_method: fulfillment,
     created_at: order.created_at,
     tip: order.total_tip_money ? (order.total_tip_money.amount / 100).toFixed(2) : 0,
@@ -246,7 +253,7 @@ async function main() {
     await insertOrder(formattedOrder, order.line_items, catalogMap, catalogData);
   }
 
-  console.log(`\n✅ Successfully processed ${ordersData.orders.length} orders`);
+  console.log(`\nSuccessfully processed ${ordersData.orders.length} orders`);
 }
 
 // Run the main function

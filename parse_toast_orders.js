@@ -240,7 +240,7 @@ async function main() {
     await insertOrder(formattedOrder, check.selections);
   }
 
-  console.log(`\n✅ Successfully processed ${data.orders.length} orders`);
+  console.log(`\nSuccessfully processed ${data.orders.length} orders`);
 }
 
 // Run the main function

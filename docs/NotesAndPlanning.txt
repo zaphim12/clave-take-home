@@ -9,7 +9,7 @@ CREATE TABLE ORDERS (
   tip DECIMAL(10, 2),
   tax DECIMAL(10, 2),
   total DECIMAL(10, 2),
-  POS VARCHAR(100)
+  provider VARCHAR(100)
 );
 
 CREATE TABLE ORDER_ITEMS (
@@ -83,7 +83,7 @@ ORDERS:
 - tip = dasher_tip
 - tax = tax_amount
 - total = total_charged_to_consumer
-- POS = (explicit-string) "Doordash"
+- provider = (explicit-string) "Doordash"
 
 ORDER_ITEMS:
 - order_id = external_delivery_id
@@ -112,7 +112,7 @@ ORDERS:
 - tip = payments.tipAmount
 - tax = payments.taxAmount
 - total = payments.totalAmount
-- POS = (explicit-string) "Toast"
+- provider = (explicit-string) "Toast"
 
 ORDER_ITEMS:
 - order_id = guid
@@ -140,7 +140,7 @@ ORDER:
 - tip = total_tip_money
 - tax = total_tax_money
 - total = total_money
-- POS (doordash, toast, etc) = (explicit-string) "Square"
+- provider (doordash, toast, etc) = (explicit-string) "Square"
 
 ORDER_ITEMS:
 - order_id = id
